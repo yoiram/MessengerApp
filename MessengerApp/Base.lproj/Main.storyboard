@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XLE-lz-YvB">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--MessengerView-->
+        <scene sceneID="feI-GK-aIy">
+            <objects>
+                <viewController title="MessengerView" id="XLE-lz-YvB" customClass="MessengerViewController" customModule="MessengerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OVl-Go-epU"/>
+                        <viewControllerLayoutGuide type="bottom" id="b7d-W2-8rL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gdF-s0-UHI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JyB-SS-GOO">
+                                <rect key="frame" x="16" y="30" width="568" height="570"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageViewCell" id="uUi-ml-3Xu">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uUi-ml-3Xu" id="clB-Sa-qbv">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L43-T6-IDJ">
+                                <rect key="frame" x="16" y="540" width="568" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bbj-NY-oRg">
+                                        <rect key="frame" x="15" y="15" width="487" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzF-96-D4y">
+                                        <rect key="frame" x="517" y="15" width="36" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="QRI-bg-WJc"/>
+                                        </constraints>
+                                        <state key="normal" title="Send">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendButtonTapped:" destination="XLE-lz-YvB" eventType="touchUpInside" id="X5q-uu-4Cw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Bbj-NY-oRg" firstAttribute="top" secondItem="L43-T6-IDJ" secondAttribute="top" constant="15" id="0cb-OM-zbP"/>
+                                    <constraint firstItem="LzF-96-D4y" firstAttribute="top" secondItem="Bbj-NY-oRg" secondAttribute="top" id="2hm-m5-gcp"/>
+                                    <constraint firstAttribute="height" constant="60" id="LzQ-Kz-CVR"/>
+                                    <constraint firstAttribute="trailing" secondItem="LzF-96-D4y" secondAttribute="trailing" constant="15" id="kvz-Jm-fn8"/>
+                                    <constraint firstItem="LzF-96-D4y" firstAttribute="leading" secondItem="Bbj-NY-oRg" secondAttribute="trailing" constant="15" id="uax-Hi-RDy"/>
+                                    <constraint firstItem="Bbj-NY-oRg" firstAttribute="leading" secondItem="L43-T6-IDJ" secondAttribute="leading" constant="15" id="vcg-gu-Ige"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JyB-SS-GOO" firstAttribute="leading" secondItem="L43-T6-IDJ" secondAttribute="leading" id="DXW-An-F3i"/>
+                            <constraint firstItem="L43-T6-IDJ" firstAttribute="leading" secondItem="gdF-s0-UHI" secondAttribute="leadingMargin" id="GPu-kC-hfL"/>
+                            <constraint firstItem="JyB-SS-GOO" firstAttribute="top" secondItem="OVl-Go-epU" secondAttribute="bottom" constant="10" id="XHI-N7-cNd"/>
+                            <constraint firstItem="JyB-SS-GOO" firstAttribute="bottom" secondItem="b7d-W2-8rL" secondAttribute="top" id="f1J-ff-w52"/>
+                            <constraint firstItem="JyB-SS-GOO" firstAttribute="trailing" secondItem="L43-T6-IDJ" secondAttribute="trailing" id="flD-r5-VkW"/>
+                            <constraint firstItem="L43-T6-IDJ" firstAttribute="bottom" secondItem="b7d-W2-8rL" secondAttribute="top" id="gqd-um-v13"/>
+                            <constraint firstItem="L43-T6-IDJ" firstAttribute="trailing" secondItem="gdF-s0-UHI" secondAttribute="trailingMargin" id="pbZ-gK-2P3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dockViewHeightConstraint" destination="LzQ-Kz-CVR" id="xN2-E7-IQ4"/>
+                        <outlet property="messageTableView" destination="JyB-SS-GOO" id="W9g-7H-8de"/>
+                        <outlet property="messageTextField" destination="Bbj-NY-oRg" id="2Tn-RS-ONa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PWr-iy-uDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1100" y="500"/>
+        </scene>
+    </scenes>
+</document>
